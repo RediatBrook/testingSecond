@@ -1,0 +1,14 @@
+
+body {
+  margin: 0;
+  line-height: inherit;
+}
+
+/* TODO: this is a hack.  Next.js SSR the MUI elements, and the emotion styles are in the initial
+payload.  However, emotion doesn't kick in and process the styled elements until after the page is fetched
+and re-executed.  This results in the intial MUI inputs from having a line that overlaps the text because
+it's missing a 16px margin from the emotion styles.  I think the correct solution is to have the emotion styles
+processed at compile time, but haven't figured that out yet - Eric */
+.MuiInput-root {
+  margin-top: 16px;
+}
